@@ -1,8 +1,6 @@
-## Find the output
-
+Find the output
 For the give code below write the output/error along with the reason!
 
-```js
 let user = {
   username: 'John',
   sayHello(message = 'Hello') {
@@ -50,4 +48,3 @@ console.log(new MainUser().sayHello.call(user)); // output / error
 console.log(
   new MainUser().sayHello.apply(user, ['Welcome!'])
 ); // output / error
-```
