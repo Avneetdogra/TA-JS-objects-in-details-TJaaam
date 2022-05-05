@@ -1,18 +1,45 @@
-## Stack and Queue
-
+Stack and Queue
 To understand how stack and queue works look at the following diagrams.
 
-Stack
-![Stack](../assets/stack.gif)
+Stack Stack
 
-Queue
-![Queue](../assets/queue.gif)
+Queue Queue
 
-1. Create a class name `Stack` with the following data and methods. Also implement a `length` getter method.
-
+Create a class name Stack with the following data and methods. Also implement a length getter method.
 Data:
 
-- `stack`
+class Stack {
+    constraction  (){
+        this.stack =[];
+    }
+    push(value){
+this.stack.push(value);
+return this.stack
+    }
+    pop(){
+        this.stack.pop()
+        return this.stack;
+    }
+    peek(index = this.stack.length -1){
+          this.stack.lastIndex(index);
+          return this.stack[index]
+      
+    }
+    reverse(){
+        this.stack.reverse();
+        return this.reverse;
+    }
+    isEmpty(){
+        return !(this.stack.length >0)
+    }
+    displayStack(){
+        this.stack.join("");
+        return this.stack;
+    }
+    get length (){
+        return this.stack.length;
+    }
+}
 
 Methods:
 
@@ -44,28 +71,47 @@ console.log(myStack.peek()); // 'Two'
 console.log(myStack.isEmpty()); // false
 myStack.pop();
 console.log(myStack.isEmpty()); // true
-```
-
-2. Create a class name `Queue` with the following data and methods. Also implement a `length` getter method.
-
+Create a class name Queue with the following data and methods. Also implement a length getter method.
 Data:
 
-- `queue`
-
+queue
 Methods:
 
-- `enqueue`(item): Adds the item at the end of the queue
-- `dequeue`: Removes an item from the top of the queue
-- `peek`: can accept and optional parameter. Will display the element at the given index(passed as argument). If nothing is passed display the first element from top (index 0)
-- `isEmpty`: returns `true` if the stack is empty and `false` if the stack has any data.
-- `displayQueue`: returns all the data in stack in string format
-
+enqueue(item): Adds the item at the end of the queue
+dequeue: Removes an item from the top of the queue
+peek: can accept and optional parameter. Will display the element at the given index(passed as argument). If nothing is passed display the first element from top (index 0)
+isEmpty: returns true if the stack is empty and false if the stack has any data.
+displayQueue: returns all the data in stack in string format
 Getter
 
-- `length`: returns the current length of the stack.
-
-#### Test
-
+length: returns the current length of the stack.
+Test
+class Queue {
+  constructor() {
+    this.queue = [];
+  }
+  enqueue(value) {
+    this.queue.push(value);
+    return this.queue;
+  }
+  dequeue() {
+    this.queue.shift();
+    return this.queue;
+  }
+  peek(index = this.queue.length - 1) {
+    return this.queue[index];
+  }
+  isEmpty() {
+    return !(this.queue.length > 0);
+  }
+  displayQueue(value) {
+    this.queue.join(value);
+    return this.queue;
+  }
+  get length() {
+    return this.queue.length;
+  }
+}
 ```js
 let atmQueue = new Queue();
 atmQueue.enqueue('Aman');
@@ -82,4 +128,3 @@ console.log(atmQueue.isEmpty()); // false
 atmQueue.dequeue();
 atmQueue.dequeue();
 console.log(atmQueue.isEmpty()); // true
-```
